@@ -1,6 +1,6 @@
 # Fiscal de Compras e Preços
 
-![Capa do projeto: Fiscal de Compras e Preços](https://raw.githubusercontent.com/soteropolitano/fiscal-de-compras-e-precos/main/assets/linkedin-cover.jpg)
+![Capa do projeto: Fiscal de Compras e Preços](https://raw.githubusercontent.com/BaianoMaligno/fiscal-de-compras-e-precos/main/assets/linkedin-cover.jpg)
 
 Durante uma compra, o preço pode aparecer de três formas: no anúncio, na prateleira e no cupom fiscal. Quando os valores não coincidem, conferir tudo manualmente dá trabalho e a diferença pode passar despercebida.
 
@@ -89,7 +89,7 @@ Os próximos testes devem medir a leitura de diferentes formatos de cupom, promo
 
 ## Arquivos privados de trabalho
 
-As instruções completas, a planilha pessoal e os materiais de trabalho ficam no [pasta privada do projeto no Codex](https://github.com/soteropolitano/Codex/tree/main/projetos/fiscal-de-compras-e-precos). Este repositório público mantém a documentação e os exemplos fictícios.
+As instruções completas, a planilha pessoal e os materiais de trabalho ficam na governança privada em `projetos-llms` (`~/Documents/Projetos LLMs/05_compras_e_gadgets/fiscal-compras-precos` / [BaianoMaligno/projetos-llms](https://github.com/BaianoMaligno/projetos-llms)). Este repositório público mantém a documentação e os exemplos fictícios.
 
 ## Documentação
 
@@ -105,7 +105,7 @@ As instruções completas, a planilha pessoal e os materiais de trabalho ficam n
 
 A planilha pessoal de controle não é uma automação de gastos. Esta arte é independente dos dados da planilha e pode ser usada na área de projetos do LinkedIn.
 
-![Capa do projeto relacionado: Minhas Compras — controle pessoal](https://raw.githubusercontent.com/soteropolitano/fiscal-de-compras-e-precos/main/assets/controle-pessoal-linkedin-cover.jpg)
+![Capa do projeto relacionado: Minhas Compras — controle pessoal](https://raw.githubusercontent.com/BaianoMaligno/fiscal-de-compras-e-precos/main/assets/controle-pessoal-linkedin-cover.jpg)
 
 ## Licença
 

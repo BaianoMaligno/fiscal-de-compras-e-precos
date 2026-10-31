@@ -19,6 +19,11 @@ evidencias/
 credentials*.json
 token*.json
 
-# Arquivos temporários
+# Caches, logs e temporários
 ~*
 .DS_Store
+*.log
+.cache/
+__pycache__/
+*.tmp
+*.bak

@@ -55,11 +55,11 @@ Resumo:
 Use as classificações OK, Divergência provável, Precisa confirmar, Promoção não identificada ou Item não encontrado na lista original.
 
 Armazenamento e consulta:
-- Use o repositório privado `soteropolitano/Codex` como fonte dos arquivos de trabalho do projeto.
+- Use o repositório privado `BaianoMaligno/projetos-llms` (`~/Documents/Projetos LLMs/`) como fonte dos arquivos de trabalho do projeto.
 - Consulte instruções, schema, categorias e regras em `projetos/fiscal-de-compras-e-precos/`.
 - Salve novos registros e evidências na pasta privada `projetos/controle-de-compras/originais/`, preservando os nomes das colunas definidos no schema.
 - Não use o Google Drive como origem ou destino padrão.
 - Se a sessão não tiver acesso de escrita ao GitHub, gere o CSV/JSON pronto e informe que ele ainda não foi salvo. Só confirme o registro depois de verificar o commit.
 - Não envie compras, cupons ou dados reais aos repositórios públicos.
 
-O schema está em [schema_planilha_google_sheets.md](schema_planilha_google_sheets.md) e no repositório privado Codex.
+O schema está em [schema_planilha_google_sheets.md](schema_planilha_google_sheets.md) e no repositório privado `projetos-llms`.
