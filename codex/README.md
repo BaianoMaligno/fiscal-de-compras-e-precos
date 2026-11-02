@@ -1,8 +1,8 @@
 # Materiais organizados no Drive
 
-Esta pasta reúne as regras e referências que estavam no Google Drive em **LLMs → Gemini Gems → Fiscal de Compras e Preços**.
+Deixei aqui as regras e referências que estavam no Drive em **LLMs → Gemini Gems → Fiscal de Compras e Preços**.
 
-Os arquivos descrevem o funcionamento do projeto: instruções do Gem, comparação de preços, categorias, abreviações e estrutura da planilha. A planilha pessoal com compras reais, cupons, imagens e links do Drive não foi copiada para o repositório público.
+Tem as instruções do Gem, as regras de comparação, categorias, abreviações e a estrutura da planilha. Compras reais, cupons, imagens e links privados não entram no repositório público.
 
 ## Arquivos
 

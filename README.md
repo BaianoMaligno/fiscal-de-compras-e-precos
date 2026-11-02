@@ -2,11 +2,11 @@
 
 ![Capa do projeto: Fiscal de Compras e Preços](https://raw.githubusercontent.com/BaianoMaligno/fiscal-de-compras-e-precos/main/assets/linkedin-cover.jpg)
 
-Durante uma compra, o preço pode aparecer de três formas: no anúncio, na prateleira e no cupom fiscal. Quando os valores não coincidem, conferir tudo manualmente dá trabalho e a diferença pode passar despercebida.
+A ideia é conferir se o preço anunciado, o da prateleira e o cobrado no cupom são os mesmos. Fazer isso item por item dá trabalho, e alguma diferença acaba passando.
 
-Criei este MVP para organizar esse processo. O assistente recebe fotos da lista, dos preços e do cupom, estrutura os itens, compara os valores e mantém um histórico no Google Sheets. As imagens ficam no Google Drive como evidência da conferência.
+Montei o MVP para ajudar nessa conferência. Envio as fotos da lista, dos preços e do cupom. O assistente organiza os itens, compara os valores e atualiza o histórico no Google Sheets. As imagens ficam no Google Drive para conferir depois.
 
-O projeto foi aplicado com um **Gem do Gemini**, uma planilha no **Google Sheets** e pastas no **Google Drive**. Este repositório documenta a solução e usa somente dados fictícios. Cupons, listas, planilhas e links reais não são publicados.
+Usei um **Gem do Gemini**, **Google Sheets** e **Google Drive**. Aqui deixei a documentação e exemplos com dados fictícios. Os cupons, listas, planilhas e links reais ficam privados.
 
 ## O que o MVP faz
 
@@ -19,7 +19,7 @@ O projeto foi aplicado com um **Gem do Gemini**, uma planilha no **Google Sheets
 - mantém um histórico de preços por produto, loja e data;
 - preserva a imagem original como evidência, sem levar dados pessoais para a base pública.
 
-Quando uma informação não está legível, o assistente marca **Precisa confirmar**. Quando existe diferença, mas a evidência ainda não é suficiente, registra **Divergência provável**. A automação ajuda na conferência, mas não transforma uma leitura incerta em acusação.
+Se a imagem estiver ilegível, fica **Precisa confirmar**. Se houver uma possível diferença sem comprovação suficiente, fica **Divergência provável**. A IA ajuda a conferir; não pode inventar um valor nem afirmar cobrança indevida sem evidência.
 
 ## Como funciona
 
@@ -37,7 +37,7 @@ flowchart LR
     G --> F
 ```
 
-O fluxo usado foi:
+O fluxo é esse:
 
 1. fotografar ou enviar a lista;
 2. registrar os preços encontrados na loja;
@@ -47,7 +47,7 @@ O fluxo usado foi:
 
 ## Organização da planilha
 
-A base foi dividida para não misturar a compra, os itens e as divergências:
+Separei a planilha por compra, itens e divergências:
 
 | Aba | Finalidade |
 | --- | --- |
@@ -62,7 +62,7 @@ A base foi dividida para não misturar a compra, os itens e as divergências:
 
 O modelo completo está em [docs/modelo-de-dados.md](docs/modelo-de-dados.md). Os arquivos em [examples](examples) mostram como a exportação funciona com dados inventados.
 
-## Decisões que fizeram diferença
+## Por que fiz assim
 
 - **Planilha como base principal:** era simples de consultar, corrigir e compartilhar sem criar um sistema maior do que o problema.
 - **Drive para as evidências:** a planilha guarda os registros e aponta para a imagem usada na conferência.
@@ -75,17 +75,17 @@ As escolhas e os limites atuais estão detalhados em [docs/decisoes.md](docs/dec
 
 ## Engenharia de prompt
 
-As instruções do Gem foram organizadas em torno de tarefas concretas: identificar a origem da imagem, extrair sem completar lacunas, normalizar descrições sem apagar o texto original, calcular, comparar e devolver uma saída compatível com a planilha.
+As instruções do Gem seguem a ordem da conferência: identificar a imagem, ler o que está nela, organizar a descrição sem apagar o original, calcular e comparar. Depois, devolver no formato da planilha. Informação que falta continua faltando.
 
-Também separei estados que parecem semelhantes, mas exigem tratamentos diferentes: **OK**, **Precisa confirmar**, **Promoção não identificada** e **Divergência provável**. Essa separação reduziu respostas categóricas quando a imagem não sustentava uma conclusão.
+Separei os estados em **OK**, **Precisa confirmar**, **Promoção não identificada** e **Divergência provável**. Assim, uma dúvida de leitura não aparece como uma conclusão fechada.
 
 O desenho das instruções está resumido em [docs/engenharia-de-prompt.md](docs/engenharia-de-prompt.md).
 
 ## Situação atual
 
-O MVP já tem a estrutura de dados, as regras de comparação e o fluxo entre Gemini, Google Sheets e Google Drive. A planilha foi montada para receber os registros e gerar um histórico consultável.
+A estrutura de dados, as regras e o fluxo Gemini → Sheets → Drive estão documentados. A planilha foi preparada para receber os registros e manter o histórico.
 
-Os próximos testes devem medir a leitura de diferentes formatos de cupom, promoções condicionais, produtos vendidos por peso e a taxa de itens que ainda precisam de confirmação manual.
+Ainda preciso testar mais formatos de cupom, promoções com condições e produtos por peso. Também quero medir quantos itens continuam dependendo de conferência manual.
 
 ## Arquivos privados de trabalho
 
@@ -103,7 +103,7 @@ As instruções completas, a planilha pessoal e os materiais de trabalho ficam n
 
 ## Capa da planilha relacionada: Minhas Compras
 
-A planilha pessoal de controle não é uma automação de gastos. Esta arte é independente dos dados da planilha e pode ser usada na área de projetos do LinkedIn.
+Minhas Compras é minha planilha de controle pessoal, sem automação de gastos. A capa abaixo não contém os dados dela e pode ser usada no LinkedIn.
 
 ![Capa do projeto relacionado: Minhas Compras — controle pessoal](https://raw.githubusercontent.com/BaianoMaligno/fiscal-de-compras-e-precos/main/assets/controle-pessoal-linkedin-cover.jpg)
 
